@@ -34,7 +34,7 @@ def format_header_param(name, value):
     if not any(ch in value for ch in '"\\\r\n'):
         result = '%s="%s"' % (name, value)
         try:
-            result.encode('ascii')
+            result.encode('utf8')
         except UnicodeEncodeError:
             pass
         else:
